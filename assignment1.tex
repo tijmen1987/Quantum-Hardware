@@ -1,0 +1,208 @@
+\documentclass{qihw}
+\graphicspath{{./img/}}  %folder to store images
+\university{TU Delft}
+\lecture{Quantum Hardware Lecture 1}   %the lecture name
+\hwno{1}  %homework number
+\duedate{20 February 2018}  %due date
+
+\title{Quantum Hardware - Winter Semester 2018}
+\author{j.d.klassen@tudelft.nl}
+
+\begin{document}\thispagestyle{plain}
+
+
+\maketitle
+
+
+\problem{Quantum Harmonic Oscillators  (25 marks)}
+Consider the following pair of operators:
+
+ $$a=\sqrt{\frac{m \omega}{2}}(\hat{x} + \frac{i}{m\omega} \hat{p})$$ $$a^{\dagger} =\sqrt{\frac{m \omega}{2}}(\hat{x} - \frac{i}{m\omega} \hat{p}).$$
+ 
+\part (3 marks) Using the fact that $[\hat{x},\hat{p}]=i$, verify that  $[a, a^{\dagger}] = \mathbb{I}$.
+
+\part (5 marks) Consider a quantum harmonic oscillator, given by the Hamiltonian $H= \hat{p}^2/2m +\frac{1}{2} m \omega^2 \hat{x}^2$ with $\hbar=1$. Express $H$ in terms of the operator $\hat{n} := a^{\dagger} a$.
+
+\part (7 marks) Assuming the orthonormal set of states $\{\ket{n}\}$ satisfy $\hat{n} \ket{n} = n \ket{n}$, verify that:
+\begin{itemize}
+\item $\hat{n} a  = a (\hat{n}-1)$, and thus $a \ket{n} \propto \ket{n-1}$ .
+\item $\hat{n} a^{\dagger}= a(\hat{n}+1)$, and thus $a^{\dagger} \ket{n} \propto \ket{n+1}$.
+\item determine the normalization constants $C_n$ and $C_n'$ in $a \ket{n} = C_n \ket{n-1}$ and $a^{\dagger} \ket{n} = C_n'\ket{n+1}$.
+\item $a a^{\dagger} \ket{n} = (n+1) \ket{n}$.
+\end{itemize}
+
+
+
+
+
+\part (10 marks) Verify that $ e^{iHt} a e^{-i H t}=e^{-i \omega t}a$. And determine the corresponding identity for $ e^{iHt} a^{\dagger} e^{-i H t}$.
+
+({\it Hint:} Expand $H$ in its eigenbasis $\ket{n}$.) 
+
+\problem{Rotations in the Bloch Sphere (25 marks)}
+
+Recall that a pure qubit state $\ket{\psi}\in\hsp{2}$ is defined by a normalized vector in a 2-dimensional Hilbert space over complex field: $$\ket\psi = \alpha_0\ket0
++ \alpha_1\ket1 \qquad \vert\alpha_0\vert^2 +
+\vert\alpha_1\vert^2 = 1$$ for which a global phase is irrelevant: \[\ket\psi
+\equiv \e^{i\varphi}\ket\psi
+\]
+
+\part (5 marks) Derive the Bloch sphere representation of the qubit : show that there is a 1-1 correspondence between a qubit state and a point on the surface of a sphere. Give a general expression for a qubit state in terms of polar coordinates $\theta$ and $\varphi$ (see \autoref{fig:bloch}). As a matter of convention use the freedom of choice for the global phase to ensure that the amplitude $\alpha_0$ is a real number.  
+
+%A pure qubit state $\ket{\psi}\in\hsp{2}$ is defined by a normalized
+%vector in a 2-dimensional Hilbert space over complex field. This means that there
+%are two complex numbers, $\alpha_0$ and $\alpha_1$, called
+%\emph{amplitudes} such that 
+%\[\vert\alpha_0\vert^2 +
+%\vert\alpha_1\vert^2 = 1\qquad \text{and} \qquad\ket\psi = \alpha_0\ket0
+%+ \alpha_1\ket1.\] In addition, changing the state by multiplying it by a
+%global phase $\e^{i\varphi}$ gives an equivalent state, \[\ket\psi
+%\equiv \e^{i\varphi}\ket\psi.
+%\]
+% 
+%In other words, a space of pure qubit states (and pure quantum
+%states in general) can be thought as projective Hilbert space, i.e. %\ $ \left\lbrace [x] \vert \; x\in \hsp{2}, \; x\neq 0, \; [x] = [y] \text{ iff } x=ay,\; a\in \mathbb{C} \right\rbrace$
+%\
+%$\big(\mathcal{H}_{2} \setminus \{0\}\big) / \sim$, where
+%equivalence relation $x \sim y$ iff
+%$\exists a \in \mathbb{C}: x = ay$.
+%
+%\part Why is the vector constrained to be normalized? Can we observe a global phase of a qubit state? Why not?
+%
+%\part How many real parameters are needed to define a qubit state?  Give a real parametrisation of qubit states that takes into account the constraint of normalization. Use the freedom of choice for the global phase such that the amplitude for $\ket0$ is a real number.
+%
+%\emph{Hint: }Use the polar representation of complex numbers and some trigonometric identities.
+
+%\emph{Hint :} You can start by expressing $\alpha_0$ and $\alpha_1$ in
+%polar coordinate , $\alpha_0 = r_0\e^{i\varphi_0}$ and $\alpha_1 =
+%r_1\e^{i\varphi_1}$. Then express the normalization condition on the two
+%real and positive parameters, $r_0$ and $r_1$. Recall that $\cos^2
+%\theta + \sin^2 \theta = 1$.
+
+%\part Relate your parametrisation to the spherical coordinates, $\theta$
+%and $\varphi$, of a unit vector in 3D space, as shown in
+%\autoref{fig:bloch}.
+%
+%The set of qubit state should be in bijection with
+%the points on the unit sphere with $\ket0$ represented by $+\vec{z}$ and
+%$\ket1$ by $-\vec{z}$. This is called the Bloch sphere. It is useful to
+%visualize the single qubit states and the single qubit operations.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = .3\textwidth]{bloch_sphere}
+\caption{The Bloch sphere.}
+\label{fig:bloch}
+\end{figure}
+
+
+
+%\part Express the states represented by the six vectors lying on the Cartesian axes. Show that any two states represented by opposite vectors in the Bloch sphere are orthogonal. 
+
+Recall the \emph{Pauli matrices} :
+\begin{equation*}
+X=\begin{pmatrix}
+0 & 1\\
+1 & 0
+\end{pmatrix}
+\qquad
+Y=\begin{pmatrix}
+0 & -i\\
+i & 0
+\end{pmatrix}
+\qquad
+Z=\begin{pmatrix}
+1 & 0\\
+0 & -1
+\end{pmatrix}.
+\end{equation*}
+They are written in computational basis $\{\ket{0},\ket{1}\}$, which is
+also the eigenbasis for the $Z$ matrix.
+
+\part (5 marks) Find the eigenstates and eigenvalues of each Pauli matrix. Show that the states represented by the six vectors lying on the Cartesian axes are the eigenstates of the Pauli matrices. Show that any two states represented by opposite vectors in the Bloch sphere are orthogonal. ({\it Hint:} A vector with spherical coordinates $\vec{R}(r,\theta,\phi)$ satisfies   $\vec{R}(r,\theta+\pi,\phi)=-\vec{R}(r ,\theta,\phi)$.)
+
+\part (2 marks) The measurement of the $X,Y$ or $Z$ observable is the measurement in the corresponding eigenbasis of $X,Y$ or $Z$. What happens to an arbitrary pure qubit state when, for instance, you measure an $X$  observable? What does this look like in the Bloch sphere representation? 
+
+%\part Given one qubit Pauli group $\mathcal{P}=\{X,Y,Z\}$. For
+%  $\sigma_i,\sigma_j\in \mathcal{P}$, what happens if one wants to
+%  measure the $\sigma_i$
+%  observable on an eigenstate of $\sigma_j$ for $j\neq k$?
+
+Any single qubit unitary operator $U$ obeying $U U^{\dagger}=\mathbb{I}$ can be written as $U=e^{i \gamma} R_n(\alpha)$ where
+    \[
+      R_{\hat{n}}(\alpha)\equiv\exp(-i\alpha \hat{n}\cdot\vec{\sigma}/2)=
+      \cos\left(\frac{\alpha}{2}\right)I-i\sin\left(\frac{\alpha}{2}\right)
+      (n_x X+ n_y Y + n_z Z).
+    \]
+    With $\alpha \in \R$ and $\hat{n}$ a three-dimensional unit
+    vector. 
+   This is a useful way to visualize the action of an operator
+   on a single qubit state in the Bloch sphere representation, since the action of $R_{\hat{n}}(\alpha)$ on a state, corresponds to the rotation of its vector on the Bloch sphere by an angle $\alpha$ around the vector $\hat{n}$.
+
+\part (3 marks) Find the values of $\hat{n}$, $\alpha$ and $\gamma$ such that $ e^{i\gamma}R_{\hat{n}}(\alpha)=X$. Describe the action $X\ket{\psi}= \ket{\psi'}$ on the corresponding vector in the Bloch sphere. Draw a picture.
+
+
+
+Some examples of other single qubit gates are the Hadamard gate $H$ and the phase gate $S$ which are defined as 
+  \[
+    H= \frac{1}{\sqrt{2}}
+    \begin{pmatrix}
+      1 & 1 \\
+      1 & -1
+    \end{pmatrix}
+    \quad\quad
+    S=\begin{pmatrix}
+      1 & 0 \\
+      0 & i
+    \end{pmatrix}
+  \]
+
+\part (5 marks) Define the Hadamard gate and the phase gate in term of rotation
+  gates and explain their actions on the Bloch sphere. What do we obtain 
+  by operating a phase gate twice?
+
+
+\problem{Dynamics in the Rotating Frame (15 marks)}
+
+\part (5 marks) Let $\ket{\tilde{\psi}(t)}=U(t) \ket{\psi(t)}$ where $\ket{\psi(t)}$ is the solution of the Schr\"odinger equation 
+$i \frac{d\ket{\psi}}{dt}=H \ket{\psi}$ ($\hbar=1$). Show that 
+the ``rotating wavefunction" $\ket{\tilde{\psi}(t)}$ evolves according to a Schr\"odinger equation with Hamiltonian $\tilde{H}=U H U^{\dagger}+i \frac{d U}{dt} U^{\dagger}$. 
+
+\part (10 marks) Read through paragraph 7.7.2 in NC (Nielsen $\&$ Chuang book) and do Exercise 7.33 in NC. (see the end of the assignment for a copy of the aforementioned text)
+
+
+\problem{Rabi Oscillations (25 marks)}
+
+We consider an atom with two electronic levels in a time-changing electric field $\vec{E}(r,t)$. The two-level Hamiltonian of the atom itself is $H_0=-\frac{\omega_0}{2} Z=-\frac{\omega_0}{2}(\ket{g}\bra{g}-\ket{e}\bra{e})$ where $\ket{e}$ is the excited and 
+$\ket{g}$ is the groundstate. In the so-called dipole approximation we approximate the effect of the electric field as 
+\begin{equation}
+V=-A X cos(\omega t) .
+\end{equation}
+where $A$ determines the strength of the coupling and $X=\ket{e}\bra{g}+\ket{g}\bra{e}$. The full Hamiltonian is $H=H_0+V$.
+
+
+\part (12 marks) Assume an ansatz for the Schr\"odinger equation of the form $\ket{\psi(t)}=\alpha_g(t)e^{-i H_0 t}\ket{g}+\alpha_e(t) e^{-i H_0 t}\ket{e}$ and obtain decoupled differential equations for $\alpha_g(t), \alpha_e(t)$. 
+Make the {\em rotating wave approximation}, that is neglect in the differential equations for $\alpha_g(t)$ and $\alpha_e(t)$
+the fast changing term proportional to $\exp{\pm i(\omega+\omega_0)t}$. Let $\Delta=\omega_0-\omega$  (called the detuning) which is assumed to be much smaller than $\omega+\omega_0$.
+
+\part (6 marks) Assume that $\alpha_e(t)=e^{i \lambda t}$ and show that one can solve for $\lambda_{\pm}=\frac{1}{2}(\Delta\pm \sqrt{\Delta^2+A^2})$. Write the general form of the solution for $\alpha_e(t)$. ({\it Hint:} The equations of motion found in part (a) are second order linear differential equations with constant coefficients.)
+
+\part (7 marks) What is the expression for the probability $P_e(t)$ to find the atom in the state $\ket{e}$ at a time $t$ when we start it in the initial state $\ket{g}$? The frequency of this oscillatory behavior is 
+$\Omega_R=\sqrt{\Delta^2+A^2}$ and is called the Rabi frequency. 
+
+
+\pagebreak 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 1\textwidth]{NC1}
+\includegraphics[width = 1\textwidth]{NC2}
+\end{figure}
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[width = 1\textwidth]{NC3}
+\end{figure}
+
+\end{document}
